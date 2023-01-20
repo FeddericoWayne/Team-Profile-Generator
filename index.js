@@ -36,7 +36,7 @@ const nextQuestion = [
         type: "checkbox",
         name: "continue",
         message: "What would you like to do next?",
-        choices: ["Add a new Enginieer","Add a new Intern","Finish building the team for now and generate team roster"]
+        choices: ["Add a new Enginieer","Add a new Intern","Finish building the team and generate team roster"]
     }
 ];
 
@@ -91,14 +91,16 @@ const internQuestion = [
 // function to get data from inquirer prompts and to use template helper to appendFile with fs 
 function askQuestion() {
 
-    fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.initialTemplate(),() => {
-    });
+    console.log("Let's build your team!");
 
     inquirer
     .prompt(managerQuestion)
     .then((data)=> {
 
         // add validation here and add test to test.js
+
+        fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.initialTemplate(),() => {
+        });
 
         let manager = new Manager(data.name,data.id,data.email,data.number);
 

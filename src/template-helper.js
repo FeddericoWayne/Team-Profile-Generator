@@ -64,7 +64,6 @@ function internTemplate(intern) {
             <p>School: ${intern.getSchool()}</p>
         </div>
     `
-
 }
 
 
