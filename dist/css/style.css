@@ -1,3 +1,4 @@
+/* css variables */
 :root {
     --blue: #3d5a80;
     --teal: #98c1d9;
@@ -13,20 +14,24 @@
     --bg: #ffffb4;
 }
 
+/* page width and background setting */
 html {
     width: 100%;
     background-color: var(--bg);
 }
 
+/* font setting */
 * {
     font-family:'Roboto Condensed', sans-serif;
 }
 
+/* special heading font setting */
 h1,h3,h4 {
     font-family: 'Orbitron', sans-serif;
     color: var(--cinder);
 }
 
+/* employee card setting */
 .card {
     text-align: center;
     color: var(--cinder);
@@ -35,10 +40,12 @@ h1,h3,h4 {
     border-radius: 15px;
 }
 
+/* employee icon size setting */
 img {
     height: 50px;
 }
 
+/* header setting */
 header {
     width:90vw;
     text-align: center;
@@ -49,7 +56,7 @@ header {
     border: 10px solid var(--cinder);
 }
 
-
+/* employee profile section setting */
 #team-wrapper {
     justify-content: center;
     margin: 30px auto;
@@ -59,7 +66,7 @@ header {
     flex-wrap: wrap;
 }
 
-
+/* manager box setting */
 #manager-wrapper {
     color: var(--muted);
     background-color: var(--salmon);
@@ -80,6 +87,7 @@ header {
     box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
 }
 
+/* engineer box setting */
 #engineer-wrapper {
     background-color: var(--blue);
     color:var(--muted);
@@ -98,6 +106,7 @@ header {
     box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
 }
 
+/* intern box setting */
 #intern-wrapper {
     background-color: var(--green);
     color:var(--muted);
@@ -116,13 +125,14 @@ header {
     box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
 }
 
+/* link setting */
 a {
     color: var(--muted);
     cursor: pointer;
     text-decoration: none;
 }
 
-
+/* media query for small viewports */
 @media screen and (max-width:720px) {
      
     #manager-wrapper {

@@ -1,4 +1,4 @@
-// function with template literal for html generation
+// function to initiate the html page
 function initialTemplate() {
     return `<!DOCTYPE html>
 <html lang="en">
@@ -20,6 +20,7 @@ function initialTemplate() {
 `
 };
 
+// function to generate and return manager div with information gathered by inquirer
 function managerTemplate(manager) {
     return `
         <div id=manager-wrapper>
@@ -35,6 +36,7 @@ function managerTemplate(manager) {
     `
 };
 
+// function to generate and return engineer div with information gathered by inquirer
 function engineerTemplate(engineer) {
     return `
         <div id=engineer-wrapper>
@@ -51,6 +53,7 @@ function engineerTemplate(engineer) {
     `
 }
 
+// function to generate and return intern div with information gathered by inquirer
 function internTemplate(intern) {
     return `
         <div id=intern-wrapper>
@@ -66,7 +69,7 @@ function internTemplate(intern) {
     `
 }
 
-
+// function to close and complete the html page
 function completeRoster() {
     return`
     </div>
@@ -76,7 +79,7 @@ function completeRoster() {
 }
 
 
-
+// exports all template functions 
 module.exports = {
     initialTemplate,
     managerTemplate,
