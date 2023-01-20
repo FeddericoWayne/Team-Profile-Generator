@@ -1,0 +1,141 @@
+:root {
+    --blue: #3d5a80;
+    --teal: #98c1d9;
+    --babyblue: #e0fbfc;
+    --brick: #ee6c4d;
+    --salmon: #e39a87;
+    --glow-red: #e7c7bf;
+    --cinder: #293241;
+    --muted: #edf2f4;
+    --green: #7a9f79;
+    --mint: #b1dd9e;
+    --glow-green: #d3ffc0;
+    --bg: #ffffb4;
+}
+
+html {
+    width: 100%;
+    background-color: var(--bg);
+}
+
+* {
+    font-family:'Roboto Condensed', sans-serif;
+}
+
+h1,h3,h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--cinder);
+}
+
+.card {
+    text-align: center;
+    color: var(--cinder);
+    background-color: var(--babyblue);
+    padding: 10px 25px;
+    border-radius: 15px;
+}
+
+img {
+    height: 50px;
+}
+
+header {
+    width:90vw;
+    text-align: center;
+    margin: 10px auto;
+    padding: 25px 0px;
+    background-color: var(--muted);
+    border-radius: 35px;
+    border: 10px solid var(--cinder);
+}
+
+
+#team-wrapper {
+    justify-content: center;
+    margin: 30px auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+#manager-wrapper {
+    color: var(--muted);
+    background-color: var(--salmon);
+    border: 8px solid var(--brick);
+    border-radius: 15px;
+    width: 40vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-bottom: 15px;
+    padding: 15px;
+    overflow-y: scroll;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+#manager-wrapper:hover {
+    border: 8px solid var(--glow-red);
+    box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
+}
+
+#engineer-wrapper {
+    background-color: var(--blue);
+    color:var(--muted);
+    width: 25vw;
+    padding: 15px;
+    margin: 10px;
+    border: 5px solid var(--teal);
+    border-radius: 10px;
+    overflow-y: scroll;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+#engineer-wrapper:hover {
+    border: 5px solid var(--babyblue);
+    box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
+}
+
+#intern-wrapper {
+    background-color: var(--green);
+    color:var(--muted);
+    width: 25vw;
+    padding: 15px;
+    margin: 10px;
+    border: 5px solid var(--mint);
+    border-radius: 10px;
+    overflow-y: scroll;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+#intern-wrapper:hover {
+    border: 5px solid var(--glow-green);
+    box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
+}
+
+a {
+    color: var(--muted);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width:720px) {
+     
+    #manager-wrapper {
+        width: 80vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 15px;
+    }
+
+    #intern-wrapper,#engineer-wrapper {
+        width: 70vw;
+        padding: 15px;
+        margin: 10px 15vw;
+    }
+}
+
