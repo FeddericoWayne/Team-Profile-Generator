@@ -1,10 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const template = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/src/template-helper.js");
-const Employee = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/lib/Employee.js");
-const Manager = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/lib/Manager.js");
-const Engineer = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/lib/Engineer.js");
-const Intern = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/lib/Intern.js");
+const template = require("./src/template-helper");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 
 // inquirer prompt questions
