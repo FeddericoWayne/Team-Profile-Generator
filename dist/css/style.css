@@ -45,6 +45,15 @@ img {
     height: 50px;
 }
 
+@keyframes spin {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
 /* header setting */
 header {
     width:90vw;
@@ -87,6 +96,10 @@ header {
     box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
 }
 
+#manager-wrapper:hover img {
+    animation: spin 1s ease 1 forwards;
+}
+
 /* engineer box setting */
 #engineer-wrapper {
     background-color: var(--blue);
@@ -104,6 +117,10 @@ header {
 #engineer-wrapper:hover {
     border: 5px solid var(--babyblue);
     box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
+}
+
+#engineer-wrapper:hover img {
+    animation: spin 1s ease 1 forwards;
 }
 
 /* intern box setting */
@@ -125,11 +142,21 @@ header {
     box-shadow: 10px 10px 20px var(--cinder), inset 0px 0px 20px white;
 }
 
+#intern-wrapper:hover img {
+    animation: spin 1s ease 1 forwards;
+}
+
 /* link setting */
 a {
     color: var(--muted);
     cursor: pointer;
     text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+a:hover {
+    color: var(--cinder)
 }
 
 /* media query for small viewports */
