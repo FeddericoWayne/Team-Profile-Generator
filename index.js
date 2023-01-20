@@ -94,9 +94,6 @@ const internQuestion = [
 // initial question for the manager's information
 function askQuestion() {
 
-    // alerts user that process has begun
-    console.log("Let's build your team!");
-
     // creates html file with <head> elements with the initialTemplate function
     fs.appendFile("./dist/html/index.html",template.initialTemplate(),() => {
     });
@@ -106,15 +103,30 @@ function askQuestion() {
     .prompt(managerQuestion)
     .then((data)=> {
 
-        // add validation here and add test to test.js
+        // check to see if the entered email is in the correct format
+        // if not, to prompt the manager info questions again
+        if(!data.email.includes("@")) {
+            console.log("Please enter a valid email!")
 
-        // instantiates new Manager with data collected from inquirer prompt
-        let manager = new Manager(data.name,data.id,data.email,data.number);
+            // wipes the html content clean for the re-do
+            fs.writeFile("./dist/html/index.html","",() => {
 
-            // appends the manager template to existing html file and makes inquirer prompt the main menu
-            fs.appendFile("./dist/html/index.html",template.managerTemplate(manager),() => {
-                next();
+                // make inquirer ask for manager info again
+                askQuestion();
             });
+
+        } else {        
+            
+            // instantiates new Manager with data collected from inquirer prompt
+            let manager = new Manager(data.name,data.id,data.email,data.number);
+    
+                // appends the manager template to existing html file and makes inquirer prompt the main menu
+                fs.appendFile("./dist/html/index.html",template.managerTemplate(manager),() => {
+                    next();
+                }
+            );
+        }
+
 
     })
 
@@ -135,15 +147,25 @@ function next() {
             .prompt(engineerQuestion)
             .then((data)=>{
 
-                // add validation here and add test to test.js
+                // checks if the email entered is in the correct email format
+                if(!data.email.includes("@")) {
 
-                // instantiates new Engineer with information gathered from inquirer prompt
-                let engineer = new Engineer(data.name,data.id,data.email,data.username);
-
-                // uses enginieerTemplate to generate html content and appends it to existing html file and takes the user back to main menu
-                fs.appendFile("./dist/html/index.html",template.engineerTemplate(engineer),() => {
+                    // alerts user to enter a correct email
+                    console.log("Please enter a valid email!");
+                    // takes user back to main menu to start again
                     next();
-                });
+
+                } else {
+
+                    // instantiates new Engineer with information gathered from inquirer prompt
+                    let engineer = new Engineer(data.name,data.id,data.email,data.username);
+
+                    // uses enginieerTemplate to generate html content and appends it to existing html file and takes the user back to main menu
+                    fs.appendFile("./dist/html/index.html",template.engineerTemplate(engineer),() => {
+                        next();
+                    });
+                }
+
             }) 
 
         // if user chooses to enroll a new intern
@@ -154,17 +176,25 @@ function next() {
             .prompt(internQuestion)
             .then((data) => {
 
-                // add validation here and add test to test.js 
-
-                // instantiate new Intern 
-                let intern = new Intern(data.name,data.id,data.email,data.school);
-
-                // appends generated html content to exisiting html file by using internTemplate
-                fs.appendFile("./dist/html/index.html",template.internTemplate(intern),() => {
-
-                    // brings user back to main menu
+                // checks if email entered is in the correct format
+                if(!data.email.includes("@")) {
+                    // alerts user to enter a correct email
+                    console.log("Please enter a valid email!");
+                    // takes user back to main menu to start again
                     next();
-                });
+                } else {
+
+                    // instantiate new Intern 
+                    let intern = new Intern(data.name,data.id,data.email,data.school);
+
+                    // appends generated html content to exisiting html file by using internTemplate
+                    fs.appendFile("./dist/html/index.html",template.internTemplate(intern),() => {
+
+                        // brings user back to main menu
+                        next();
+                    });
+                }
+
             })
 
         } else {
@@ -179,6 +209,9 @@ function next() {
         }
     })
 };
+
+// alerts user that process has begun
+console.log("Let's build your team!");
 
 // calls the initial question function
 askQuestion();

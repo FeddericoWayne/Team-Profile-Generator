@@ -25,7 +25,7 @@ function managerTemplate(manager) {
     return `
         <div id=manager-wrapper>
             <div class="card">
-                <h3>${manager.getName()}</h3>
+                <h3>${manager.getName().toUpperCase()}</h3>
                 <h4>${manager.getRole().toUpperCase()}</h4>
                 <img src="../../assets/images/manager.png" alt="manager-icon">
             </div>
@@ -41,7 +41,7 @@ function engineerTemplate(engineer) {
     return `
         <div id=engineer-wrapper>
             <div class="card">
-                <h3>${engineer.getName()}</h3>
+                <h3>${engineer.getName().toUpperCase()}</h3>
                 <h4>${engineer.getRole().toUpperCase()}</h4>
                 <img src="../../assets/images/engineer.png" alt="engineer-icon">
             </div>
@@ -58,7 +58,7 @@ function internTemplate(intern) {
     return `
         <div id=intern-wrapper>
             <div class="card">
-                <h3>${intern.getName()}</h3>
+                <h3>${intern.getName().toUpperCase()}</h3>
                 <h4>${intern.getRole().toUpperCase()}</h4>
                 <img src="../../assets/images/intern.png" alt="intern-icon">
             </div>
