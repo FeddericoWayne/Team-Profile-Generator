@@ -1,4 +1,4 @@
-const Manager = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/lib/Manager.js");
+const Manager = require("../lib/Manager");
 
 describe ("Manager",() => {
 

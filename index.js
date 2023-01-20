@@ -93,18 +93,18 @@ function askQuestion() {
 
     console.log("Let's build your team!");
 
+    fs.appendFile("./dist/html/index.html",template.initialTemplate(),() => {
+    });
+
     inquirer
     .prompt(managerQuestion)
     .then((data)=> {
 
         // add validation here and add test to test.js
 
-        fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.initialTemplate(),() => {
-        });
-
         let manager = new Manager(data.name,data.id,data.email,data.number);
 
-            fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.managerTemplate(manager),() => {
+            fs.appendFile("./dist/html/index.html",template.managerTemplate(manager),() => {
                 next();
             });
 
@@ -127,7 +127,7 @@ function next() {
 
                 let engineer = new Engineer(data.name,data.id,data.email,data.username);
 
-                fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.engineerTemplate(engineer),() => {
+                fs.appendFile("./dist/html/index.html",template.engineerTemplate(engineer),() => {
                     next();
                 });
             }) 
@@ -142,14 +142,14 @@ function next() {
 
                 let intern = new Intern(data.name,data.id,data.email,data.school);
 
-                fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.internTemplate(intern),() => {
+                fs.appendFile("./dist/html/index.html",template.internTemplate(intern),() => {
                     next();
                 });
             })
 
         } else {
 
-            fs.appendFile("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/dist/index.html",template.completeRoster(),() => {
+            fs.appendFile("./dist/html/index.html",template.completeRoster(),() => {
                 console.log("Team Roster Generated!");
             })
         }

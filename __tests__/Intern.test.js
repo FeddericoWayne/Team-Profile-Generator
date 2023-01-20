@@ -1,4 +1,4 @@
-const Intern = require("/Users/fedderico/Desktop/Bootcamp/Team Profile Generator/lib/Intern.js");
+const Intern = require("../lib/Intern");
 
 describe ("Intern", () => {
 
