@@ -26,7 +26,7 @@
 
     If you select option (3), you will be notified that the team roster has completed, and you'll be able to find the html file in the "html" directory inside the "dist" directory.
 
-  The URL to the demo video for this App is: 
+  The URL to the demo video for this App is: https://app.castify.com/view/60b754ce-88c9-473e-9c83-250fea35327a
   
   Command-line screenshot:
   <img src="./assets/images/command-lind-screenshot.png">

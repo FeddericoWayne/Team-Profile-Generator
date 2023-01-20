@@ -75,7 +75,7 @@ const internQuestion = [
     {
         type: "input",
         name: "id",
-        message: "Please enter the intern's ID number:"
+        message: "Please enter the intern's employee ID number:"
     },
     {
         type: "input",
