@@ -139,74 +139,87 @@ function next() {
     .prompt(nextQuestion)
     .then((data)=>{
 
-        // if user chooses to enroll a new engineer
-        if (data.continue[0] === "Add a new Enginieer") {
+        // checks if only one option is selected
+        if (data.continue.length !== 1) {
 
-            // makes inquirer ask the user for the new engineer's information
-            inquirer
-            .prompt(engineerQuestion)
-            .then((data)=>{
+            // alerts the user if more than one option is selected
+            console.log("Please select only one option to proceed!");
 
-                // checks if the email entered is in the correct email format
-                if(!data.email.includes("@")) {
-
-                    // alerts user to enter a correct email
-                    console.log("Please enter a valid email!");
-                    // takes user back to main menu to start again
-                    next();
-
-                } else {
-
-                    // instantiates new Engineer with information gathered from inquirer prompt
-                    let engineer = new Engineer(data.name,data.id,data.email,data.username);
-
-                    // uses enginieerTemplate to generate html content and appends it to existing html file and takes the user back to main menu
-                    fs.appendFile("./dist/html/index.html",template.engineerTemplate(engineer),() => {
-                        next();
-                    });
-                }
-
-            }) 
-
-        // if user chooses to enroll a new intern
-        } else if (data.continue[0] === "Add a new Intern") {
-
-            // makes inquirer gather information about the new intern
-            inquirer
-            .prompt(internQuestion)
-            .then((data) => {
-
-                // checks if email entered is in the correct format
-                if(!data.email.includes("@")) {
-                    // alerts user to enter a correct email
-                    console.log("Please enter a valid email!");
-                    // takes user back to main menu to start again
-                    next();
-                } else {
-
-                    // instantiate new Intern 
-                    let intern = new Intern(data.name,data.id,data.email,data.school);
-
-                    // appends generated html content to exisiting html file by using internTemplate
-                    fs.appendFile("./dist/html/index.html",template.internTemplate(intern),() => {
-
-                        // brings user back to main menu
-                        next();
-                    });
-                }
-
-            })
+            // brings the user back to main menu
+            next();
 
         } else {
+            // if user chooses to enroll a new engineer
+            if (data.continue[0] === "Add a new Enginieer") {
 
-            // if user chooses to finish the process and complete the roster
-            // the completeRoster function completes the html page
-            fs.appendFile("./dist/html/index.html",template.completeRoster(),() => {
+                // makes inquirer ask the user for the new engineer's information
+                inquirer
+                .prompt(engineerQuestion)
+                .then((data)=>{
 
-                // alerts user that the team roster is now ready to view
-                console.log("Team Roster Generated!");
-            })
+                    // checks if the email entered is in the correct email format
+                    if(!data.email.includes("@")) {
+
+                        // alerts user to enter a correct email
+                        console.log("Please enter a valid email!");
+                        // takes user back to main menu to start again
+                        next();
+
+                    } else {
+
+                        // instantiates new Engineer with information gathered from inquirer prompt
+                        let engineer = new Engineer(data.name,data.id,data.email,data.username);
+
+                        // uses enginieerTemplate to generate html content and appends it to existing html file and takes the user back to main menu
+                        fs.appendFile("./dist/html/index.html",template.engineerTemplate(engineer),() => {
+                            next();
+                        });
+                    }
+
+                }) 
+
+            // if user chooses to enroll a new intern
+            } else if (data.continue[0] === "Add a new Intern") {
+
+                // makes inquirer gather information about the new intern
+                inquirer
+                .prompt(internQuestion)
+                .then((data) => {
+
+                    // checks if email entered is in the correct format
+                    if(!data.email.includes("@")) {
+                        // alerts user to enter a correct email
+                        console.log("Please enter a valid email!");
+                        // takes user back to main menu to start again
+                        next();
+                    } else {
+
+                        // instantiate new Intern 
+                        let intern = new Intern(data.name,data.id,data.email,data.school);
+
+                        // appends generated html content to exisiting html file by using internTemplate
+                        fs.appendFile("./dist/html/index.html",template.internTemplate(intern),() => {
+
+                            // brings user back to main menu
+                            next();
+                        });
+                    }
+
+                })
+
+            } else {
+
+                // if user chooses to finish the process and complete the roster
+                // the completeRoster function completes the html page
+                fs.appendFile("./dist/html/index.html",template.completeRoster(),() => {
+
+                    // alerts user that the team roster is now ready to view
+                    console.log("Team Roster Generated!");
+                })
+            }
         }
+
+
     })
 };
 
