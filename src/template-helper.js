@@ -30,7 +30,7 @@ function managerTemplate(manager) {
                 <img src="../../assets/images/manager.png" alt="manager-icon">
             </div>
             <p>ID: ${manager.getId()}</p>
-            <p>Email: <a href="mailto:${manager.getEmail()}" target="blank">${manager.getEmail()}</a></p>
+            <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
             <p>Office Number: ${manager.officeNumber}</p>
         </div>
     `
@@ -46,8 +46,8 @@ function engineerTemplate(engineer) {
                 <img src="../../assets/images/engineer.png" alt="engineer-icon">
             </div>
             <p>ID: ${engineer.getId()}</p>
-            <p>Email: <a href="mailto:${engineer.getEmail()}" target="blank">${engineer.getEmail()}</a></p>
-            <p>GitHub: <a href="https://github.com/${engineer.getGithub().toLowerCase()}" target="blank">${engineer.getGithub()}</a></p>
+            <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
+            <p>GitHub: <a href="https://github.com/${engineer.getGithub().toLowerCase()}" target="_blank">${engineer.getGithub()}</a></p>
 
         </div>
     `
@@ -63,7 +63,7 @@ function internTemplate(intern) {
                 <img src="../../assets/images/intern.png" alt="intern-icon">
             </div>
             <p>ID: ${intern.getId()}</p>
-            <p>Email: <a href="mailto:${intern.getEmail()}" target="blank">${intern.getEmail()}</a></p>
+            <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
             <p>School: ${intern.getSchool()}</p>
         </div>
     `
