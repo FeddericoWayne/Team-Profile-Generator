@@ -103,9 +103,9 @@ function askQuestion() {
     .prompt(managerQuestion)
     .then((data)=> {
 
-        // check to see if the entered email is in the correct format
+        // uses regex to check if the entered email is in the correct format
         // if not, to prompt the manager info questions again
-        if(!data.email.includes("@")) {
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data.email)) {
             console.log("Please enter a valid email!")
 
             // wipes the html content clean for the re-do
@@ -157,8 +157,8 @@ function next() {
                 .prompt(engineerQuestion)
                 .then((data)=>{
 
-                    // checks if the email entered is in the correct email format
-                    if(!data.email.includes("@")) {
+                    // uses regex to check if the email entered is in the correct email format
+                    if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data.email)) {
 
                         // alerts user to enter a correct email
                         console.log("Please enter a valid email!");
@@ -186,8 +186,8 @@ function next() {
                 .prompt(internQuestion)
                 .then((data) => {
 
-                    // checks if email entered is in the correct format
-                    if(!data.email.includes("@")) {
+                    // uses regex to check if email entered is in the correct format
+                    if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data.email)) {
                         // alerts user to enter a correct email
                         console.log("Please enter a valid email!");
                         // takes user back to main menu to start again
