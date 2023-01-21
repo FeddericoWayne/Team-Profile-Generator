@@ -10,8 +10,8 @@
   
   Once you've entered the manager's info correctly, you'll then be shown the menu containing the following three options:
 
-    1) To add an enginieer into your team roster
-    2) to add an intern into your team roster
+    1) To add an enginieer onto your team roster
+    2) to add an intern onto your team roster
     3) To finish the process and complete the team roster as an html file.
   
   If you select more than one option at once, you will be alerted to only select one option to proceed, and you'll be shown the menu again.
