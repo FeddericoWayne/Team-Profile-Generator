@@ -2,29 +2,29 @@
 
   ## <a id="Description">Description</a> 
 
-    This is a command-line app that's built on node.js with the help of inquirer and jest.
+  This is a command-line app that's built on node.js with the help of inquirer and jest.
 
-    With this App you can very quickly generate a team roster html page by answering questions prompted by the inquirer package regarding your team members. 
+  With this App you can very quickly generate a team roster html page by answering questions prompted by the inquirer package regarding your team members. 
 
-    To start the app, run the command "node index.js", and you'll be prompted to enter the team manager's name, ID, email, and office phone number. If you enter an email address without the "@" symbol, you will be alerted to enter a valid email address, and you'll have to start the manager info process again.
-    
-    Once you've entered the manager's info correctly, you'll then be shown the menu containing the following three options:
+  To start the app, run the command "node index.js", and you'll be prompted to enter the team manager's name, ID, email, and office phone number. If you enter an email address without the "@" symbol, you will be alerted to enter a valid email address, and you'll have to start the manager info process again.
+  
+  Once you've entered the manager's info correctly, you'll then be shown the menu containing the following three options:
 
-      1) To add an enginieer into your team roster
-      2) to add an intern into your team roster
-      3) To finish the process and complete the team roster as an html file.
-    
-    If you select more than one option at once, you will be alerted to only select one option to proceed, and you'll be shown the menu again.
+    1) To add an enginieer into your team roster
+    2) to add an intern into your team roster
+    3) To finish the process and complete the team roster as an html file.
+  
+  If you select more than one option at once, you will be alerted to only select one option to proceed, and you'll be shown the menu again.
 
-    If you select option (1), you will be prompted to enter the new engineer's name, ID, email, and their GitHub username.
-    Afterwards, you'll be taken back to the menu again.
+  If you select option (1), you will be prompted to enter the new engineer's name, ID, email, and their GitHub username.
+  Afterwards, you'll be taken back to the menu again.
 
-    If you select option (2), you will be prompted to enter the new intern's name, ID, email, and their school name.
-    Afterwards, you'll be taken back to the menu again.
+  If you select option (2), you will be prompted to enter the new intern's name, ID, email, and their school name.
+  Afterwards, you'll be taken back to the menu again.
 
-    If you enter an invalid email (i.e. a string without the "@" symbol), you will be alerted to enter a valid email dress, and you will be taken back to the menu to start again.
+  If you enter an invalid email (i.e. a string without the "@" symbol), you will be alerted to enter a valid email dress, and you will be taken back to the menu to start again.
 
-    If you select option (3), you will be notified that the team roster has completed, and you'll be able to find the html file in the "html" directory inside the "dist" directory.
+  If you select option (3), you will be notified that the team roster has completed, and you'll be able to find the html file in the "html" directory inside the "dist" directory.
 
   The URL to the demo video for this App is: https://app.castify.com/view/60b754ce-88c9-473e-9c83-250fea35327a
   
